@@ -1,2 +1,69 @@
-<div>Welcome</div>
-<button class="logout" (click)="register()">Logout</button>
+<div class="flex justify-between items-center flex-row mx-8 my-4">
+    <div></div>
+    <div class="flex justify-center text-5xl font-bold italic">F I L T E R</div>
+    <div class="flex flex-row">
+        <button class="rounded-full p-2 hover:bg-pink-200" (click)="register()">
+            <mat-icon>
+                <span class="material-symbols-outlined">person</span>
+            </mat-icon>
+        </button>
+        <button class="rounded-full p-2 hover:bg-pink-200">
+            <mat-icon>
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </mat-icon>
+        </button>
+    </div>
+</div>
+<div class="flex flex-row justify-center mx-8">
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Blush</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Bronzer</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Eyeliner</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Eyeshadow</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Foundation</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Lip liner</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Lipstick</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Mascara</button>
+    <button class="font-bold m-2 rounded-full p-2 hover:bg-pink-200">Nail polish</button>
+</div>
+<div class="flex bg-cover justify-between px-24 items-center bg-center relative h-3/5 text-right" style="background-image: url('/dashpanel.png');">
+    <div></div>
+    <div class="flex flex-col p-4 text-white">
+        <p class="text-4xl font-bold">Bronze Age Bronzing Sticks</p>
+        <div class="flex flex-col font-bold items-end">
+            <p>Vitamin E & Meadowfoam Seed Oil</p>
+            <p>Blondable & Buildable</p>
+            <p>Contour & Shade</p>
+            <a href="/store-page"><p class="w-2/3 mt-2 bg-black text-white p-2 rounded hover:text-pink-400">Shop our Store</p></a>
+        </div>
+    </div>
+</div>
+
+<div class="m-6 flex flex-col items-center pb-12">
+    <p class="text-3xl">Clean Beauty Favorites</p>
+    <div class="flex flex-row justify-evenly items-center">
+        <div class="w-1/3">
+            <img class="p-8 pb-2 w-full" src="/brand.png" alt="img">
+            <div class="flex flex-col items-center">
+                <button class="rounded-full p-2 hover:bg-pink-200">
+                    <p>SHOP <br> BY BRANDS</p>
+                </button>
+            </div>
+        </div>
+        <div class="w-1/3">
+            <img class="p-8 pb-2 w-full" src="/makeup.png" alt="img">
+            <div class="flex flex-col items-center">
+                <button class="rounded-full p-2 hover:bg-pink-200">
+                    <p>SHOP <br> MAKEUP </p>
+                </button>
+            </div>
+        </div>
+        <div class="w-1/3">
+            <img class="p-8 pb-2 w-full" src="/skincare.png" alt="img">
+            <div class="flex flex-col items-center">
+                <button class="rounded-full p-2 hover:bg-pink-200">
+                    <p>SHOP <br> SKINCARE </p>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

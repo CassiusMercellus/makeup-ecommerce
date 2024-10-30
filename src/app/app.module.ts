@@ -10,7 +10,12 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component'
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
+import { MatIconModule } from '@angular/material/icon';
+import { StorePageComponent } from './components/store-page/store-page.component';
+import { CartComponent } from './components/cart/cart.component'
+
 
 @NgModule({
   declarations: [
@@ -19,16 +24,20 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     RegisterComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    StorePageComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
