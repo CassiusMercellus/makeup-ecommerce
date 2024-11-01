@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat'
@@ -14,7 +14,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
 import { MatIconModule } from '@angular/material/icon';
 import { StorePageComponent } from './components/store-page/store-page.component';
-import { CartComponent } from './components/cart/cart.component'
+import { CartComponent } from './components/cart/cart.component';
+import { ProductPageComponent } from './components/product-page/product-page.component'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CartComponent } from './components/cart/cart.component'
     ForgotPasswordComponent,
     VerifyEmailComponent,
     StorePageComponent,
-    CartComponent
+    CartComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { CartComponent } from './components/cart/cart.component'
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })

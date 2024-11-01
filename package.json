@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:makeup-ecommerce": "node dist/makeup-ecommerce/server/server.mjs"
+    "serve:ssr:makeup-ecommerce": "node dist/makeup-ecommerce/server/server.mjs",
+    "dev:ssr": "ng run makeup-ecommerce:serve-ssr",
+    "build:ssr": "ng run makeup-ecommerce:server && ng run makeup-ecommerce:build",
+    "serve:ssr": "node dist/makeup-ecommerce/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +27,7 @@
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.10",
+    "@nguniversal/express-engine": "^7.0.1",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
