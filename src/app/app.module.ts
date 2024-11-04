@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { StorePageComponent } from './components/store-page/store-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductPageComponent } from './components/product-page/product-page.component'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),

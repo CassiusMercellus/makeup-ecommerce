@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../shared/cart.service';
 import { Observable } from 'rxjs';
+import { CartService, Cart, Product } from '../../shared/cart.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  cartItems$: Observable<any> = new Observable(); // Initialize with an empty observable
+  cartItems$!: Observable<Product[]>; // Change type to Product array
 
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartItems$ = this.cartService.getCartItems(); // Get the user's cart items
+    this.cartItems$ = this.cartService.getCartItems();
   }
 }

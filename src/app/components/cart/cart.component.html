@@ -6,16 +6,20 @@
   </a>
 </div>
 
-<div *ngIf="cartItems$ | async as cart; else noItems">
-  <ul *ngIf="cart.items.length > 0; else emptyCart">
-    <li *ngFor="let item of cart.items">
-      {{ item }} <!-- You can replace this with more detailed product information if needed -->
-    </li>
-  </ul>
+<div *ngIf="cartItems$ | async as products; else noItems">
+  <div *ngIf="products.length > 0; else emptyCart" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div *ngFor="let product of products" class="border p-4 rounded shadow">
+      <img [src]="product.api_featured_image" alt="{{ product.name }}" class="w-full h-96 object-cover">
+      <h3 class="font-bold mt-2">{{ product.name }}</h3>
+      <p>Price: {{ product.price | currency }}</p>
+    </div>
+  </div>
+  
   <ng-template #emptyCart>
     <p>Your cart is empty.</p>
   </ng-template>
 </div>
+
 <ng-template #noItems>
   <p>Loading cart...</p>
 </ng-template>
