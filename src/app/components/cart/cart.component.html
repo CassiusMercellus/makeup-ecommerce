@@ -12,6 +12,7 @@
       <img [src]="product.api_featured_image" alt="{{ product.name }}" class="w-full h-96 object-cover">
       <h3 class="font-bold mt-2">{{ product.name }}</h3>
       <p>Price: {{ product.price | currency }}</p>
+      <button (click)="removeFromCart(product.id)" class="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">Remove</button>
     </div>
   </div>
   

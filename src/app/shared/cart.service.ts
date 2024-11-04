@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { switchMap, take, map } from 'rxjs/operators'; // Ensure all necessary operators are imported
-import { of, Observable } from 'rxjs'; // Import Observable here
-import { arrayUnion } from 'firebase/firestore';
+import { of, Observable, from } from 'rxjs'; // Import Observable here
+import { arrayUnion, arrayRemove } from 'firebase/firestore';
 import { HttpClient } from '@angular/common/http';
 
 export interface Cart {
@@ -71,7 +71,19 @@ export class CartService {
     );
   } 
 
-  
+  removeFromCart(itemId: string): Promise<void> {
+    return this.auth.user.pipe(
+      take(1),
+      switchMap(user => {
+        if (user) {
+          const cartDoc: AngularFirestoreDocument<any> = this.firestore.doc(`carts/${user.uid}`);
+          return cartDoc.set({ items: arrayRemove(itemId) }, { merge: true });
+        } else {
+          return Promise.reject('User not authenticated');
+        }
+      })
+    ).toPromise();
+  }
   
 
 }
